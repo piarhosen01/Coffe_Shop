@@ -1,0 +1,1 @@
+const String getStartedImage = 'assets/images/getstarted.png';
