@@ -1,4 +1,6 @@
 import 'package:coffee_shop/constant/image_string.dart';
+import 'package:coffee_shop/constant/text_string.dart';
+import 'package:coffee_shop/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class GetStarted extends StatelessWidget {
@@ -27,7 +29,7 @@ class GetStarted extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Fall in love with',
+                  title1,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 32,
@@ -35,7 +37,7 @@ class GetStarted extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Coffee in Blissful',
+                  title2,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 32,
@@ -43,7 +45,7 @@ class GetStarted extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Delight',
+                  title3,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 32,
@@ -52,11 +54,11 @@ class GetStarted extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  'Welcome to our cozy coffee corner, where',
+                  subtitle1,
                   style: TextStyle(color: Colors.white54, fontSize: 16),
                 ),
                 Text(
-                  'every cup is a delightful for you',
+                  subtitle2,
                   style: TextStyle(color: Colors.white54, fontSize: 16),
                 ),
               ],
@@ -65,18 +67,23 @@ class GetStarted extends StatelessWidget {
         ],
       ),
 
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: SizedBox(
           width: double.infinity,
           height: 60,
-          child: FloatingActionButton(
+          child: ElevatedButton(
             onPressed: () {
-              // Navigate to next screen
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const Home_Screen()),
+              );
             },
-            backgroundColor: const Color(0xFFC67C4E),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFFC67C4E),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
             ),
             child: const Text(
               'Get Started',
@@ -89,7 +96,6 @@ class GetStarted extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
